@@ -45,34 +45,14 @@ class NumCompx
 		real = NewR;
 		imag = NewI;
 		return *this;}
-			 
-	// Overload dell'operatore <<
-    friend std::ostream& operator<<(std::ostream& os, const NumCompx& c) {
-        os << c.real;
-        if (c.imag >= 0)
-            os << "+" << c.imag << "i";
-        else
-            os << c.imag << "i";
-        return os;
-    }
-    /*std::ostream& operator<<(std::ostream& os, const ComplexNumber& c) {
-    os << c.getReal();
-    if (c.getImag() >= 0)
-        os << "+" << c.getImag() << "i";
-    else
-        os << c.getImag() << "i";
-    return os;
-}*/
-
-    /*Overload of <<, to make the rationals printable
-	template<typename I>
-	std::ostream&
-	operator<<(std::ostream& os, const rational<I>& r) {
-    if (r.den() != 1)
-        os << r.num() << "/" << r.den();
-    else
-        os << r.num();
-
-    return os;
-}*/
 };
+			 
+// Overload dell'operatore <<
+template<typename T>
+std::ostream& operator<<(std::ostream& out, const NumCompx<T>& z) {
+	out<<z.ParteReale();
+    if (z.ParteImmaginaria() >= 0) {
+        out << "+" << z.ParteImmaginaria() << "i";}
+    else {
+        out << z.ParteImmaginaria() << "i";}
+    return out; }
