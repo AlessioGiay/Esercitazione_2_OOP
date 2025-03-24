@@ -4,7 +4,7 @@
 
 int main()
 {	
-	NumCompx<double> z1(1.0, 2.0);
+	NumCompx<double> z1(1.0, -2.0);
 	NumCompx<double> z2(3.3, 1.9);
 
     std::cout << std::fixed << std::setprecision(1);
