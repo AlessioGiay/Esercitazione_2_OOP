@@ -4,8 +4,8 @@
 
 int main()
 {	
-	NumCompx<double> z1(1.0, -2.0);
-	NumCompx<double> z2(3.3, 1.9);
+	NumCompx<double> z1(1.9);
+	NumCompx<double> z2(-2.3, 1.9);
 
     std::cout << std::fixed << std::setprecision(1);
     
@@ -16,12 +16,21 @@ int main()
 	
 	NumCompx<double> sum = z1 + z2;
     NumCompx<double> product = z1 * z2;
+    NumCompx<double> sumCR = z1 + 2.0;
+    NumCompx<double> sumRC = 2.0 + z1;
+    NumCompx<double> prodCR = z1 * 2.0; 
+    NumCompx<double> prodRC = 2.0 * z1;     
 	NumCompx<double> Rsum = z1 += z2;
 	NumCompx<double> Rproduct = z1 *= z2;
+
 	
     std::cout << "z2: " << z2 << "\n";
     std::cout << "Somma: " << sum << "\n";
+    std::cout << "Somma C + R: " << sumCR << "\n";
+    std::cout << "Somma R + C: " << sumRC << "\n";   
     std::cout << "Prodotto: " << product << "\n";
+    std::cout << "Prodotto C * R: " << prodCR << "\n";
+    std::cout << "Prodotto R * C: " << prodRC << "\n";
     std::cout << "Somma +=: " << Rsum << "\n";
     std::cout << "Prodotto *=: " << Rproduct <<"\t\"Ora z1 vale " << Rsum << "\"\n";	
 	
