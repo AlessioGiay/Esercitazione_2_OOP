@@ -49,7 +49,7 @@ class NumCompx
 	}
 			  
 	//Overload += fra complessi
-	NumCompx operator+=(const NumCompx& other) 
+	NumCompx& operator+=(const NumCompx& other) 
 	{
 		real += other.real;
 		imag += other.imag;
@@ -57,7 +57,7 @@ class NumCompx
 	}
 		
 	//Overload *= fra complessi
-	NumCompx operator*=(const NumCompx& other) 
+	NumCompx& operator*=(const NumCompx& other) 
 	{
 		T NewR = real * other.real - imag * other.imag;
 		T NewI = real * other.imag + imag * other.real;
@@ -67,13 +67,13 @@ class NumCompx
 	}
 		
 	//Overload + Complesso-Altro
-	NumCompx operator+(const T n) 
+	NumCompx operator+(const T& n) 
 	{
 		return NumCompx(real + n, imag);
 	}
 		
 	//Overload * Complesso-Altro
-	NumCompx operator*(const T n) 
+	NumCompx operator*(const T& n) 
 	{
 		return NumCompx(real * n, imag * n);
 	}
